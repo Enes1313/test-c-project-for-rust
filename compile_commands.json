@@ -1,0 +1,22 @@
+[
+    {
+        "command": "gcc -c -Ilib -Isource/app -Isource/util -isystem /usr/include  -std=c99 -Wall -Wextra -Wconversion -fdata-sections -ffunction-sections -Wno-missing-field-initializers -Wno-missing-braces  -Wa,-a,-ad,-alms=build/lib_example.lst lib/lib_example.c -o build/lib_example.o",
+        "directory": "/home/ns/ea/test-c-project-for-rust",
+        "file": "/home/ns/ea/test-c-project-for-rust/lib/lib_example.c"
+    },
+    {
+        "command": "gcc -c -Ilib -Isource/app -Isource/util -isystem /usr/include  -std=c99 -Wall -Wextra -Wconversion -fdata-sections -ffunction-sections -Wno-missing-field-initializers -Wno-missing-braces  -Wa,-a,-ad,-alms=build/main.lst source/app/main.c -o build/main.o",
+        "directory": "/home/ns/ea/test-c-project-for-rust",
+        "file": "/home/ns/ea/test-c-project-for-rust/source/app/main.c"
+    },
+    {
+        "command": "gcc -c -Ilib -Isource/app -Isource/util -isystem /usr/include  -std=c99 -Wall -Wextra -Wconversion -fdata-sections -ffunction-sections -Wno-missing-field-initializers -Wno-missing-braces  -Wa,-a,-ad,-alms=build/app_example.lst source/app/app_example.c -o build/app_example.o",
+        "directory": "/home/ns/ea/test-c-project-for-rust",
+        "file": "/home/ns/ea/test-c-project-for-rust/source/app/app_example.c"
+    },
+    {
+        "command": "gcc -c -Ilib -Isource/app -Isource/util -isystem /usr/include  -std=c99 -Wall -Wextra -Wconversion -fdata-sections -ffunction-sections -Wno-missing-field-initializers -Wno-missing-braces  -Wa,-a,-ad,-alms=build/util_example.lst source/util/util_example.c -o build/util_example.o",
+        "directory": "/home/ns/ea/test-c-project-for-rust",
+        "file": "/home/ns/ea/test-c-project-for-rust/source/util/util_example.c"
+    }
+]
