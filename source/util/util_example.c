@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-int32_t util_sum(int count, ...)
+int32_t util_example_sum(int count, ...)
 {
     va_list ptr;
     
@@ -23,7 +23,7 @@ int32_t util_sum(int count, ...)
     return sum;
 }
 
-bool util_mult(int val1, int val2, int *p_out)
+bool util_example_mult(int val1, int val2, int *p_out)
 {
     if (val1 > 0)
     {
@@ -65,7 +65,7 @@ bool util_mult(int val1, int val2, int *p_out)
     return true;
 }
 
-bool util_random(int32_t min_val, int32_t max_val, int32_t *p_out)
+bool util_example_random(int32_t min_val, int32_t max_val, int32_t *p_out)
 {
     if (min_val >= max_val)
     {

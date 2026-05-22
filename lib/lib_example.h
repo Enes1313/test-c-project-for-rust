@@ -4,17 +4,17 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-typedef struct text_s {
+typedef struct lib_example_text_s {
     char str[50];
-} text_t;
+} lib_example_text_t;
 
-bool lib_init(void);
+bool lib_example_init(void);
 
-bool lib_show_text(const text_t *p_text);
+bool lib_example_show_text(const lib_example_text_t *p_text);
 
-bool lib_show_int32(int32_t val);
+bool lib_example_show_int32(int32_t val);
 
-void lib_deinit(void);
+void lib_example_deinit(void);
 
 #endif // LIB_EXAMPLE_H
 

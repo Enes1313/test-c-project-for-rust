@@ -13,47 +13,43 @@ static bool m_init_var = false;
 static int factor1 = INT_MIN;
 static int factor2 = INT_MIN;
 static const int m_arr[ARR_SIZE] = {13, 5, 1, 0, -1, -5, -13};
-static const text_t m_text_error = {.str = "Error"};
-static const text_t m_text_finish = {.str = "Finish"};
+static const lib_example_text_t m_text_error = {.str = "Error"};
+static const lib_example_text_t m_text_finish = {.str = "Finish"};
 
-void app_init(void)
+void app_example_init(void)
 {
     if (m_init_var)
     {
         return;
     }
     
-    m_init_var = lib_init();
+    m_init_var = lib_example_init();
 }
 
-int app_run(void)
+int app_example_run(void)
 {
     if (!m_init_var)
     {
-        counter = 0;
-        
-    	lib_deinit();
-    	
         return EXIT_FAILURE;
     }
     
     if (ARR_SIZE > counter)
     {
-        lib_show_int32(m_arr[counter]);
+        lib_example_show_int32(m_arr[counter]);
     }
     else if (ARR_SIZE == counter)
     {
         int result;
         
-        bool ret = util_mult(m_arr[0], factor1, &result);
+        bool ret = util_example_mult(m_arr[0], factor1, &result);
         
         if (false == ret)
         {
-            lib_show_text(&m_text_error);
+            lib_example_show_text(&m_text_error);
             
             int32_t out;
         
-            bool ret = util_random(0, factor2, &out);
+            bool ret = util_example_random(0, factor2, &out);
         
             if (false == ret)
             {
@@ -68,12 +64,12 @@ int app_run(void)
         }
         else
         {
-            lib_show_int32(result);
+            lib_example_show_int32(result);
         }
     }
     else
     {
-        lib_show_text(&m_text_finish);
+        lib_example_show_text(&m_text_finish);
         
         return -1;
     }
@@ -81,4 +77,14 @@ int app_run(void)
     counter++;
     
     return 0;
+}
+
+void app_example_deinit(void)
+{
+    m_init_var = false;
+    counter = 0;
+    factor1 = INT_MIN;
+    factor2 = INT_MIN;
+
+    lib_example_deinit();
 }
