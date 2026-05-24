@@ -483,5 +483,5 @@ fn main() {
     build.flag_if_supported("-ffunction-sections");
     build.flag_if_supported("-fdata-sections");
 
-    build.compile("project");
+    build.compile("crustest");
 }

@@ -4,6 +4,8 @@
 
 Bu şablon, Rust kullanarak C projeleri için sağlam, son derece otomatikleştirilmiş ve bellek güvenliğine sahip bir test altyapısı sağlar. Ceedling (Unity/CMock) gibi araçlara modern bir alternatif olarak işlev görür ve Rust'ın güçlü ekosistemini, sıkı tip kontrolünü ve paralel çalışma yeteneklerini eski (legacy) C kod tabanlarına getirir.
 
+> 💡 **İpucu:** Bu framework'ün bir C projesiyle nasıl entegre edileceğini gösteren tam ve çalışan bir örnek için [test-c-project-for-rust](https://github.com/Enes1313/test-c-project-for-rust) reposuna göz atabilirsiniz.
+
 ## ✨ Özellikler
 
 - **Otomatik Mock Üretimi:** `bindgen` ve `mockall` kullanarak tüm C başlık dosyaları (header) için otomatik olarak mock modülleri üretir.
@@ -98,7 +100,7 @@ mod app_tests {
 }
 ```
 
-> **Uyarı:** C'deki global `static` değişkenler, aynı çalıştırılabilir (executable) dosya içinde çalışıyorlarsa birden fazla `#[test]` fonksiyonu arasında kalıcı olur. Durum (state) bulaşmasını önlemek için, bu framework `.cargo/config.toml` dosyasında `RUST_TEST_THREADS = "1"` ayarlayarak testlerin sırayla çalışmasını zorunlu kılar. Ayrıca her testin başında C durumunu manuel olarak sıfırlamanız gerekebilir.
+> **Uyarı:** C'deki global `static` değişkenler, aynı çalıştırılabilir (executable) dosya içinde çalışıyorlarsa birden fazla `#[test]` fonksiyonu arasında kalıcı olur. Durum (state) bulaşmasını önlemek ve test atomikliği için, bu framework `.cargo/config.toml` dosyasında `RUST_TEST_THREADS = "1"` varsayılan olarak ayarlandı. Eğer böyle sıkıntı yoksa bu satırı kaldırabilirsiniz. Ayrıca her testin başında C durumunu manuel olarak sıfırlamanız gerekebilir.
 
 ---
 

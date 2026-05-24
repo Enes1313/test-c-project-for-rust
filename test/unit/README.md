@@ -1,9 +1,10 @@
-# Test with Rust 🦀
+# crustest
 
 *Read this in other languages: [English](README.md), [Türkçe](README.tr.md)*
 
 This template provides a robust, highly automated, and memory-safe testing framework for C projects using Rust. It acts as a modern alternative to tools like Ceedling (Unity/CMock), bringing Rust's powerful ecosystem, strict type-checking, and parallel execution to legacy C codebases.
 
+> 💡 **Tip:** For a complete working example demonstrating how to integrate this framework with a C project, please refer to the [test-c-project-for-rust](https://github.com/Enes1313/test-c-project-for-rust) repository.
 ## ✨ Features
 
 - **Automated Mock Generation:** Automatically generates mock modules for all C headers using `bindgen` and `mockall`.
@@ -98,7 +99,7 @@ mod app_tests {
 }
 ```
 
-> **Warning:** C global `static` variables persist across multiple `#[test]` functions if they run in the same executable. To prevent state contamination, this framework enforces running tests sequentially by setting `RUST_TEST_THREADS = "1"` in `.cargo/config.toml`. You may also need to reset the C state manually at the start of each test.
+> **Warning:** C global `static` variables persist across multiple `#[test]` functions if they run in the same executable. To prevent state contamination and ensure test atomicity, this framework is configured with `RUST_TEST_THREADS = "1"` by default in `.cargo/config.toml`. If you do not have such issues, you can remove this line. You may also need to reset the C state manually at the start of each test.
 
 ---
 
