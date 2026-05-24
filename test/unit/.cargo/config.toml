@@ -1,0 +1,8 @@
+[build]
+target = "i686-unknown-linux-gnu"
+rustflags = ["-C", "instrument-coverage"]
+
+[env]
+RUST_TEST_THREADS = "1"
+CARGO_PROFILE_TEST_INCREMENTAL = "0"
+LLVM_PROFILE_FILE = "target/profraw/cargo-test-%p-%m.profraw"

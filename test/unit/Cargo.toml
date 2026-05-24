@@ -1,0 +1,30 @@
+[package]
+name = "unit"
+version = "1.0.0"
+edition = "2024"
+
+[build-dependencies]
+cc = { version = "1.0.80", features = ["parallel"] }
+bindgen = "0.72.1"
+toml = "1.1.2"
+glob = "0.3.1"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+[dependencies]
+mockall = { version = "0.14.0", features = ["nightly"] }
+mockall_double = "0.3.0"
+
+[package.metadata.foreigntest]
+project_path = "../../"
+exclude_header_files_paths = []
+extra_header_files_paths = []
+compile_args = [
+    "-std=c99",
+    "-fprofile-arcs",
+    "-ftest-coverage",
+    "-Wno-missing-field-initializers",
+    "-funsigned-char",
+    "-m32",
+]
+linker_args = ["--coverage", "-m32", "-lm"]
