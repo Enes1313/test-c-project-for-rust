@@ -25,6 +25,5 @@ compile_args = [
     "-ftest-coverage",
     "-Wno-missing-field-initializers",
     "-funsigned-char",
-    "-m32",
 ]
-linker_args = ["--coverage", "-m32", "-lm"]
+linker_args = ["--coverage", "-lm"]

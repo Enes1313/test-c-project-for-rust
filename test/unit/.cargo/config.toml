@@ -1,5 +1,4 @@
 [build]
-target = "i686-unknown-linux-gnu"
 rustflags = ["-C", "instrument-coverage"]
 
 [env]
